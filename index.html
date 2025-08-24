@@ -10,8 +10,9 @@
       --secondary-font-scale: 1;
     }
     
-    /* Black and white theme override */
+    /* Mobile-first responsive design */
     * {
+      box-sizing: border-box;
       background-color: #000000 !important;
       color: #FFFFFF !important;
       border-color: #FFFFFF !important;
@@ -20,8 +21,146 @@
     body {
       background-color: #000000 !important;
       color: #FFFFFF !important;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
     }
     
+    /* Main container responsive */
+    #app {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+    
+    /* Header responsive */
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .BioSite-components-Header-Header__profile--Zjw0N {
+      width: 120px !important;
+      height: 120px !important;
+      border-radius: 50% !important;
+      margin: 0 auto 20px !important;
+      display: block !important;
+    }
+    
+    .BioSite-components-Header-Header__name--ZG1qn {
+      font-size: 28px !important;
+      margin: 15px 0 !important;
+      font-weight: bold !important;
+    }
+    
+    .BioSite-components-Header-Header__bio--ujbD_ {
+      font-size: 16px !important;
+      margin: 10px 0 !important;
+    }
+    
+    /* Social icons responsive */
+    .BioSite-components-BodySections-Socials-Socials__socials--vRiFp {
+      display: flex !important;
+      justify-content: center !important;
+      gap: 20px !important;
+      margin: 20px 0 !important;
+    }
+    
+    .BioSite-components-BodySections-Socials-Socials__social--qY63i {
+      padding: 12px !important;
+      border: 2px solid #FFFFFF !important;
+      border-radius: 12px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .BioSite-components-BodySections-Socials-Socials__social--qY63i:hover {
+      background-color: #FFFFFF !important;
+      transform: scale(1.1) !important;
+    }
+    
+    .BioSite-components-BodySections-Socials-Socials__social--qY63i:hover svg {
+      fill: #000000 !important;
+    }
+    
+    /* Description text responsive */
+    .BioSite-components-BodySections-TextBox-TextBox__description--jW0h9 {
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+      text-align: center !important;
+      margin: 30px 0 !important;
+      padding: 0 10px !important;
+    }
+    
+    /* Big button links - mobile friendly */
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+      border: 2px solid #FFFFFF !important;
+      border-radius: 15px !important;
+      padding: 18px 24px !important;
+      margin: 12px 0 !important;
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 400px !important;
+      margin: 12px auto !important;
+      transition: all 0.3s ease !important;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1) !important;
+      text-align: left !important;
+      position: relative !important;
+      min-height: 60px !important;
+    }
+    
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY:hover {
+      background-color: #FFFFFF !important;
+      color: #000000 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY:active {
+      transform: translateY(0) !important;
+    }
+    
+    /* Button text container */
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__textContainer--ngiWp {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+    }
+    
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__text--xnYKz {
+      flex: 1 !important;
+    }
+    
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__rightSide--SNPgk {
+      margin-left: 15px !important;
+      transition: transform 0.3s ease !important;
+    }
+    
+    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY:hover .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__rightSide--SNPgk {
+      transform: translateX(5px) !important;
+    }
+    
+    /* Links container */
+    .BioSite-components-BodySections-Links-Links__links--fh3eJ {
+      padding: 0 10px !important;
+      margin-top: 30px !important;
+    }
+    
+    /* Notification styles */
+    .BioSite-components-Notification-Notification__notification--GQ7L7 {
+      background-color: #000000 !important;
+      color: #FFFFFF !important;
+      border: 1px solid #FFFFFF !important;
+      border-radius: 10px !important;
+      margin: 0 10px !important;
+    }
+    
+    /* General responsive improvements */
     a, a:visited, a:hover {
       color: #FFFFFF !important;
       background-color: #000000 !important;
@@ -40,23 +179,42 @@
     
     img {
       filter: grayscale(100%) !important;
+      max-width: 100% !important;
+      height: auto !important;
     }
     
-    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY {
-      background-color: #000000 !important;
-      color: #FFFFFF !important;
-      border: 1px solid #FFFFFF !important;
+    /* Tablet styles */
+    @media (min-width: 768px) {
+      #app {
+        padding: 0 40px;
+      }
+      
+      .BioSite-components-Header-Header__profile--Zjw0N {
+        width: 150px !important;
+        height: 150px !important;
+      }
+      
+      .BioSite-components-Header-Header__name--ZG1qn {
+        font-size: 36px !important;
+      }
+      
+      .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY {
+        font-size: 20px !important;
+        padding: 20px 28px !important;
+        max-width: 500px !important;
+      }
     }
     
-    .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY:hover {
-      background-color: #FFFFFF !important;
-      color: #000000 !important;
-    }
-    
-    .BioSite-components-Notification-Notification__notification--GQ7L7 {
-      background-color: #000000 !important;
-      color: #FFFFFF !important;
-      border: 1px solid #FFFFFF !important;
+    /* Desktop styles */
+    @media (min-width: 1024px) {
+      #app {
+        max-width: 600px;
+        padding: 0 20px;
+      }
+      
+      .BioSite-components-BodySections-Links-Layouts-Buttons-Buttons__buttons-06--_DJxY {
+        max-width: 550px !important;
+      }
     }
   </style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=5"><link href="AVcR3iUohzr2fbzwoNhZ24.png"><meta data-react-helmet="true" name="twitter:image:alt" content="Unfold Bio Sites"><meta data-react-helmet="true" name="theme-color" content="#FFFFFF"><link data-react-helmet="true" rel="preconnect" href="https://fonts.googleapis.com/"><link data-react-helmet="true" rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous"><link data-react-helmet="true" href="./Puneet Singh — Bio Site_files/css2" rel="stylesheet"><script async="true" src="./Puneet Singh — Bio Site_files/js" data-react-helmet="true"></script><script data-react-helmet="true">
     window.dataLayer = window.dataLayer || [];
