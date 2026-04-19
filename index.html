@@ -30,7 +30,7 @@
        ======================================================== -->
   <div class="vA">
     <aside class="rail">
-      <div class="photo-wrap"><img src="photo.png" alt="Puneet Singh" /></div>
+      <div class="photo-wrap"><img src="Puneet Singh — Bio Site_files/AVcR3iUohzr2fbzwoNhZ24.png" alt="Puneet Singh" /></div>
 
       <div class="rail-meta">
         <div class="row"><b>Now</b><span>Building <em>xhawk.ai</em></span></div>
@@ -137,81 +137,6 @@
       </div>
     </main>
   </div>
-
-
-
-<!-- ===== Tweaks panel ===== -->
-<aside class="tweaks" aria-label="Tweaks">
-  <h4>Tweaks</h4>
-
-  <div class="lbl">Layout</div>
-  <div class="tweak-row">
-    <button class="tweak-btn" data-tweak="variant" data-value="a">A</button>
-    <button class="tweak-btn" data-tweak="variant" data-value="b">B</button>
-    <button class="tweak-btn" data-tweak="variant" data-value="c">C</button>
-  </div>
-  <div class="lbl" style="margin-top:4px;font-size:9px;color:var(--mute);">A·Index &nbsp; B·Stacked &nbsp; C·Portrait</div>
-
-  <div class="lbl">Accent</div>
-  <div class="tweak-row">
-    <button class="tweak-swatch" data-tweak="accent" data-value="umber"   style="background: oklch(52% 0.11 45);" aria-label="Warm umber"></button>
-    <button class="tweak-swatch" data-tweak="accent" data-value="ink"     style="background: #161513;" aria-label="Ink (no accent)"></button>
-    <button class="tweak-swatch" data-tweak="accent" data-value="olive"   style="background: oklch(48% 0.08 120);" aria-label="Olive"></button>
-    <button class="tweak-swatch" data-tweak="accent" data-value="navy"    style="background: oklch(38% 0.09 260);" aria-label="Navy"></button>
-    <button class="tweak-swatch" data-tweak="accent" data-value="claret"  style="background: oklch(42% 0.14 20);" aria-label="Claret"></button>
-  </div>
-</aside>
-
-<!-- ===== JS ===== -->
-<script>
-(() => {
-  const DEFAULTS = /*EDITMODE-BEGIN*/{
-    "variant": "c",
-    "accent": "umber"
-  }/*EDITMODE-END*/;
-
-  const ACCENTS = {
-    umber:  "oklch(52% 0.11 45)",
-    ink:    "#161513",
-    olive:  "oklch(48% 0.08 120)",
-    navy:   "oklch(38% 0.09 260)",
-    claret: "oklch(42% 0.14 20)"
-  };
-
-  const state = { ...DEFAULTS };
-
-  function apply() {
-    document.body.dataset.variant = state.variant;
-    document.documentElement.style.setProperty("--accent", ACCENTS[state.accent] || ACCENTS.umber);
-    // update pressed states
-    document.querySelectorAll(".tweak-btn, .tweak-swatch").forEach(btn => {
-      const k = btn.dataset.tweak, v = btn.dataset.value;
-      btn.setAttribute("aria-pressed", state[k] === v ? "true" : "false");
-    });
-  }
-
-  document.querySelectorAll(".tweak-btn, .tweak-swatch").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const k = btn.dataset.tweak, v = btn.dataset.value;
-      state[k] = v;
-      apply();
-      try {
-        window.parent.postMessage({ type: "__edit_mode_set_keys", edits: { [k]: v } }, "*");
-      } catch (e) {}
-    });
-  });
-
-  // Edit-mode protocol: listener first, then announce
-  window.addEventListener("message", (e) => {
-    const d = e.data || {};
-    if (d.type === "__activate_edit_mode")   document.body.dataset.tweaks = "on";
-    if (d.type === "__deactivate_edit_mode") document.body.dataset.tweaks = "off";
-  });
-  try { window.parent.postMessage({ type: "__edit_mode_available" }, "*"); } catch (e) {}
-
-  apply();
-})();
-</script>
 
 </body>
 </html>
